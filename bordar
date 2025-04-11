@@ -1,0 +1,3 @@
+national_id =3751674921
+vector = [int(digit) for digit in str(national_id)]
+print( vector)
