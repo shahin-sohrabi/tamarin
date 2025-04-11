@@ -1,0 +1,8 @@
+import numpy as np
+vector =[3, 7, 5, 1, 6, 7, 4, 9, 2, 1]
+matrix = []
+for i in range(10):
+    shifted = vector[i:] + vector[:i]
+    matrix.append(shifted)
+matrix = np.array(matrix)
+print(matrix)
