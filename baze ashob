@@ -1,0 +1,18 @@
+#بازی آشوب
+import matplotlib.pyplot as plt
+import random
+points = [(0, 0), (1, 0), (0.5, 0.866)]
+x, y = random.choice(points)
+x_vals, y_vals = [x], [y]
+iterations = 10000
+for _ in range(iterations):
+    target = random.choice(points) 
+    x = (x + target[0]) / 2
+    y = (y + target[1]) / 2
+    x_vals.append(x)
+    y_vals.append(y)
+
+plt.scatter(x_vals, y_vals, s=1, color="blue")
+plt.axis("off")
+plt.title("baze ashob")
+plt.show()
