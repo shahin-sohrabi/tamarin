@@ -1,0 +1,35 @@
+#فرض کنید نوعی باتری وجود داردکه هر روز به دو قسمت تقسیم میشود و هر باکمتری در هر روزبه احتمال 25% میمیرد با استفاده از توابع برنامه ای بنوسید که نمودار رشد تعداد باکتری ها را برحسب زمان رسم کند چقدر طول میکشسد تعداد باکتری ها به یک ملیون برسد
+import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate_bacteria_growth(initial_population, death_probability, max_population):
+    population = initial_population
+    days = 0
+    populations = [population]
+    time = [days]
+    
+    while population < max_population:
+        new_population = population * 2 
+        deaths = np.random.binomial(new_population, death_probability) 
+        population = new_population - deaths
+        
+        days += 1
+        populations.append(population)
+        time.append(days)
+
+    return time, populations, days
+
+initial_population = 1
+death_probability = 0.25
+max_population = 1_000_000
+
+time, populations, required_days = simulate_bacteria_growth(initial_population, death_probability, max_population)
+
+plt.plot(time, populations, marker='o')
+plt.xlabel("روزها")
+plt.ylabel("تعداد باکتری‌ها")
+plt.title("رشد باکتری‌ها برحسب زمان")
+plt.grid()
+plt.show()
+
+print(f"تعداد روزهای لازم برای رسیدن به {max_population} باکتری: {required_days} روز")
