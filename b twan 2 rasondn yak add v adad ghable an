@@ -1,0 +1,7 @@
+#برنامه ای بنوسی که یک عدد را گرفته و در اعداد قبل از ان import sy به توان 2 برساند و پرینت کند+
+import sys
+
+num = int(input("yak add ra vared kkonid: "))
+
+for i in range(1, num): 
+    print(f"{i} b toan 2 2 brabr ast ba {i**2}")
