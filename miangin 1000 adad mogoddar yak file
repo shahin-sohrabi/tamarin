@@ -1,0 +1,27 @@
+
+import ast  
+
+def calculate_average(filename):
+    try:
+        with open(filename, 'r') as file:
+            content = file.read().strip() 
+            
+            numbers = ast.literal_eval(content)  
+
+            if not isinstance(numbers, list):
+                return "⚠ خطا: فایل باید شامل یک لیست از اعداد باشد!"
+
+            average = sum(numbers) / len(numbers) if numbers else 0
+            return f"میانگین اعداد: {average:.2f}"
+    
+    except FileNotFoundError:
+        return "⚠ فایل یافت نشد!"
+    except ValueError:
+        return "⚠ خطای پردازش! بررسی کنید که فایل شامل فقط اعداد باشد."
+    except SyntaxError:
+        return "⚠ خطا در قالب داده‌ها! فایل باید شامل لیست `[عدد1, عدد2, ...]` باشد."
+
+filename = "D:/python/1000.txt"
+
+print(calculate_average(filename))
+
