@@ -1,0 +1,4 @@
+def decimal_to_binary(num):
+     return bin(num)[2:]3
+ number = int(input("add vared knid: "))
+ print("nmaish binary:", decimal_to_binary(number))
