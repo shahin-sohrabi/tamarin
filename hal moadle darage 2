@@ -1,0 +1,26 @@
+#برای حل معادله درجه دو برنامه ای بنوسید که هم ریشه ها را به دست بیاورد و هم تعین کند که ریشه حقیقی است یا نه
+import math
+
+def solve_quadratic(a, b, c):
+    delta = b**2 - 4*a*c
+
+    if delta > 0:
+        root1 = (-b + math.sqrt(delta)) / (2 * a)
+        root2 = (-b - math.sqrt(delta)) / (2 * a)
+        return f"risha hagigi v motmaiz hastand: {root1:.2f} و {root2:.2f}"
+
+    elif delta == 0:
+        root = -b / (2 * a)
+        return f"risha haghihgi v takrari ast: {root:.2f}"
+
+    else:
+        real_part = -b / (2 * a)
+        imag_part = math.sqrt(abs(delta)) / (2 * a)
+        return f"risha moktalet hast: {real_part:.2f} ± {imag_part:.2f}i"
+
+a = float(input("a ra vard konid : "))
+b = float(input("b ra vard konid: "))
+c = float(input("c ra vard konid : "))
+
+result = solve_quadratic(a, b, c)
+print(result)
