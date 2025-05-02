@@ -1,0 +1,14 @@
+#تابع توضیع تجمعی احتمال گوی در پایتون پیاده سازی کنید
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+mu, sigma = 0, 1  # میانگین و انحراف معیار
+x = np.linspace(-3, 3, 1000)
+cdf = stats.norm.cdf(x, mu, sigma)
+plt.plot(x, cdf, label="CDF of Normal Distribution")
+plt.xlabel("x")
+plt.ylabel("CDF")
+plt.title("Cumulative Distribution Function (CDF)")
+plt.legend()
+plt.grid()
+plt.show()
