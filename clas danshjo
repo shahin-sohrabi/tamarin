@@ -1,0 +1,15 @@
+class Student:
+    def __init__(self, name, student_id, national_id, gpa):
+        self.name = name  
+        self.student_id = student_id  
+        self.national_id = national_id  
+        self.gpa = gpa  
+
+    def show_info(self):
+        print(f"name: {self.name}")
+        print(f" shomare danshjoi: {self.student_id}")
+        print(f" kode mali: {self.national_id}")
+        print(f"moadel: {self.gpa}")
+
+student1 = Student("shahin sohrabi ", "123456", "1234567890", 18.5)
+student1.show_info()
